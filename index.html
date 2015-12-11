@@ -6,6 +6,7 @@
   <!-- Setting the right viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>testing authentications</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 
 <body ng-controller="ControllerJwt">
@@ -14,15 +15,29 @@
   <button ng-click="twitter()">Click to Auth on twitter</button>
   &nbsp;
   <button ng-click="google()">Click to Auth on google</button>
-
+  &nbsp;
+  <button ng-click="linkedin()">Click to Auth on linkedin</button>
+  <div ng-if="loggedin">
+    <button ng-click="logout()" class="btn btn-danger pull-right"> Log Out</button>
+  </div
+  >
   <h3>Please open console to view response</h3>
   <p>Now in the object you will see 'expires' which means that's the time the auth will expire</p>
+  <h3>After logging in refresh page to view logout button</h3>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.js"></script>
+  <script src="https://lawschool.io/scripts/oauth.js"></script>
+  <script type="text/javascript">
+  OAuth.initialize('UC97ltbP8jAS0mro9Fo9xz-SSCI');
+  </script>
   <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
   <script src="app.js"></script>
   <script src="services/ref.js"></script>
+  <script src="services/users.js"></script>
 </body>
 
 </html>
